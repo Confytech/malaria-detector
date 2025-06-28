@@ -1,0 +1,12 @@
+# Ignore image datasets
+cell_images/
+cell_images_split/
+
+# Ignore trained models
+model/
+*.h5
+
+# Ignore uploads and __pycache__
+static/uploads/
+__pycache__/
+
