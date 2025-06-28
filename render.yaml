@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: malaria-detector
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12
+    plan: free
+
