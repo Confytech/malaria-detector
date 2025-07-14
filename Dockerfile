@@ -16,14 +16,16 @@ RUN apt-get update && apt-get install -y \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Python dependencies
+# Upgrade pip + install build tools early
+RUN pip install --upgrade pip setuptools wheel build
+
+# Copy requirements and install Python dependencies
 COPY requirements.txt .
-RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-# Copy project files
+# Copy app code
 COPY . .
 
-# Run the app with Gunicorn
+# Start app
 CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:8000"]
 
