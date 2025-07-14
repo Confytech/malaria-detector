@@ -1,9 +1,6 @@
 services:
   - type: web
     name: malaria-detector
-    env: python
-    pythonVersion: 3.11.9
-    buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app
+    env: docker
     plan: free
 
