@@ -10,3 +10,4 @@ model/
 static/uploads/
 __pycache__/
 
+venv/
